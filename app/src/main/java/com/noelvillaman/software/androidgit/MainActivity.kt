@@ -2,12 +2,17 @@ package com.noelvillaman.software.androidgit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        result.setOnClickListener(View.OnClickListener {
+            calculator(editTextNumber1.text.toString().toInt(), editTextNumber2.text.toString().toInt())
+        })
     }
 
     private fun calculator(num1 : Int, num2 : Int){
